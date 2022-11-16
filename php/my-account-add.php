@@ -39,8 +39,6 @@ $conn = null;
 <header>
     <div class="header-logo"></div>
     <nav class="header-menu">
-        <a href="admin.php">Admin</a>
-        <span>|</span>
         <a href="my-account.php">My account</a>
         <span>|</span>
         <a href="login.php">Se connecter</a>
@@ -52,8 +50,8 @@ $conn = null;
     <h3 class="my-account-main-title">Add animal</h3>
     <div class="box">
         <form  action="my-account-add.php" method="post">
-            <input type="text" name="name" placeholder="Name">
-            <select name="type">
+            <input type="text" name="name" placeholder="Name" required>
+            <select name="type" required>
                 <option value="Dog">Dog</option>
                 <option value="Cat">Cat</option>
                 <option value="Parrot">Parrot</option>

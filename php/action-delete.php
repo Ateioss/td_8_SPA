@@ -41,13 +41,15 @@ if(isset($_GET["action"]) && $_GET["action"] == "delete-animal"){
 
     // suppression de tous les animaux de la table animal qui n'ont aucune référence dans la table user_animal
     foreach ($id_animals as $id_animal) {
-        $stmt = $conn->prepare("DELETE FROM animal where id =:animal.id");
-        $stmt->bindParam(':animal.id', $id_animal["animal_id"]);
+        $stmt = $conn->prepare("DELETE FROM animal where id =:animal_id");
+        $stmt->bindParam(':animal_id', $id_animal["animal_id"]);
         $stmt->execute();
     }
 
     // suppression de l'utilisateur
-    $stmt = $conn->prepare("DELETE FROM user WHERE user_id = :user_id");
+    $stmt = $conn->prepare("DELETE FROM user WHERE id = :user_id");
     $stmt->bindParam(':user_id', $_GET["user_id"]);
     $stmt->execute();
+
+    header('Location: ' . 'admin.php');
 }

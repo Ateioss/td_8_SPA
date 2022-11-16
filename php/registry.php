@@ -64,10 +64,6 @@ $conn = null;
 <header>
     <div class="header-logo"></div>
     <nav class="header-menu">
-        <a href="admin.php">Admin</a>
-        <span>|</span>
-        <a href="my-account.php">My account</a>
-        <span>|</span>
         <a href="login.php">Se connecter</a>
         <span>|</span>
         <a href="registry.php">S'inscrire</a>

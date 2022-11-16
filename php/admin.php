@@ -28,8 +28,8 @@ if(isset($_GET) && isset($_GET["user_id"])){
     }
 }
 
-// Lecture des animaux en base de données
-$stmt = $conn->prepare("SELECT id, firstname, lastname, email, member, password FROM user");
+// Lecture des users en base de données
+$stmt = $conn->prepare("SELECT id, firstname, lastname, email, member, password FROM user where member = 0");
 
 // J'exécute ma requête SQL
 $stmt->execute();
